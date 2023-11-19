@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration and Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .switch-form {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .switch-form a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="registrationForm">
+    <form action="register.php" method="post">
+        <h2>Register</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Register</button>
+        <p class="switch-form">Already have an account? <a href="#" onclick="toggleForm()">Login here</a>.</p>
+    </form>
+</div>
+
+<div id="loginForm" style="display: none;">
+    <form action="login.php" method="post">
+        <h2>Login</h2>
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" name="loginUsername" required>
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required>
+
+        <button type="submit">Login</button>
+        <p class="switch-form">Don't have an account? <a href="#" onclick="toggleForm()">Register here</a>.</p>
+    </form>
+</div>
+
+<script>
+    function toggleForm() {
+        var registrationForm = document.getElementById('registrationForm');
+        var loginForm = document.getElementById('loginForm');
+
+        if (registrationForm.style.display === 'none') {
+            registrationForm.style.display = 'block';
+            loginForm.style.display = 'none';
+        } else {
+            registrationForm.style.display = 'none';
+            loginForm.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
