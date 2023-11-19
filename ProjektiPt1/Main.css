@@ -1,0 +1,9 @@
+.latestVideos{
+    display: flex;
+    justify-content: space-between;
+}
+.photos {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
