@@ -24,6 +24,25 @@ nav a {
     margin: 0 15px;
     font-weight: bold;
 }
-p{
-    text-decoration:underline
+
+.latestVideos{
+    display: flex;
+    justify-content: space-between;
+}
+.photos {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+  min-height: 100%;
+
 }
