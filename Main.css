@@ -1,0 +1,14 @@
+.latestVideos{
+    display: flex;
+    justify-content: space-between;
+}
+.photos {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+.img {
+    width: 325px;
+    height: 250px;
+}
