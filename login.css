@@ -1,7 +1,7 @@
 body{
     margin: 10px;
     padding: 10px;
-    background: url('background.jpeg') no-repeat center center fixed;
+    background: url('image/background.jpeg') no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
     height: 100vh; /* Set the height to 100% of the viewport height */
