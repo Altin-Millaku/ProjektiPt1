@@ -3,48 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>User Registration and Login</title>
     <link rel="stylesheet" href="login.css">
 
-
-    <style>
-        
-    </style>
 </head>
+
 <body>
+    <div id="loginForm" style="display: none;">
+        <form action="login.php" method="post">
+            <h2>Login</h2>
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" name="loginUsername" required minlength="8" maxlength="15"
+       title="Username should be between 8 and 15 characters">
+    
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required  pattern="[A-Z][a-zA-Z0-9]*[0-9]{3}"
+       title="Password should start with a capital letter and end with 3 numbers">
+            
+    
+            <button type="submit">Login</button>
+            <p class="switch-form">Don't have an account? <a href="#" onclick="toggleForm()">Register here</a>.</p>
+        </form>
+    </div>
 
 <div id="registrationForm">
     <form action="register.php" method="post">
         <h2>Register</h2>
+        <label for="Name">Full Name:</label>
+        <input type="text" id="Name" name="Name" required
+               pattern="[A-Za-z]+" title="Name should start with a capital letter and contain only letters">
+
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" required minlength="8" maxlength="15" title="Username should
+        be between 8 and 15 characters">
 
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" required pattern="[A-Z][a-zA-Z0-9]*[0-9]{3}"
+               title="Password should start with a capital letter and end with 3 numbers">
+
+        <label for="password">Re-write Password:</label>
+        <input type="password" id="Re-write Password" name="password" required pattern="[A-Z][a-zA-Z0-9]*[0-9]{3}"
+               title="Password should start with a capital letter and end with 3 numbers">
 
         <button type="submit">Register</button>
         <p class="switch-form">Already have an account? <a href="#" onclick="toggleForm()">Login here</a>.</p>
     </form>
 </div>
 
-<div id="loginForm" style="display: none;">
-    <form action="login.php" method="post">
-        <h2>Login</h2>
-        <label for="loginUsername">Username:</label>
-        <input type="text" id="loginUsername" name="loginUsername" required>
 
-        <label for="loginPassword">Password:</label>
-        <input type="password" id="loginPassword" name="loginPassword" required>
-
-        <button type="submit">Login</button>
-        <p class="switch-form">Don't have an account? <a href="#" onclick="toggleForm()">Register here</a>.</p>
-    </form>
-</div>
 
 <script>
     function toggleForm() {
-        var registrationForm = document.getElementById('registrationForm');
-        var loginForm = document.getElementById('loginForm');
 
         if (registrationForm.style.display === 'none') {
             registrationForm.style.display = 'block';
@@ -53,10 +63,15 @@
             registrationForm.style.display = 'none';
             loginForm.style.display = 'block';
         }
+
     }
+
+
+
 </script>
-<footer>
-        <p>&copy; 2023 Our Gym. All rights reserved.</p>
-    </footer>
+
 </body>
+<footer>
+    <p>&copy; 2023 Our Gym. All rights reserved.</p>
+</footer>
 </html>
