@@ -4,14 +4,14 @@ padding: 10px;
 background: url('./image/background.jpeg') no-repeat center center fixed;
 background-size: cover;
 font-family: Arial, sans-serif;
-height: 100vh; /* Set the height to 100% of the viewport height */
+height: 100vh; 
 display: flex;
 align-items: center;
 justify-content: center;
 
 }
 
-/* Additional styling for content if needed */
+
 .content {
 text-align: center;
 color: #fff;
