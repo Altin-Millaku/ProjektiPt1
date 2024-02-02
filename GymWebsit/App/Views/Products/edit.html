@@ -1,0 +1,54 @@
+{% extends "layout/appLayout.html" %}
+
+{% block title %}Language Edit{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Edit Product</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header">
+                        <h3 class="text-center font-weight-light my-2">Edit Product</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <form method="post" action="/admin-products-update">
+                            <div class="form-group">
+                                <input type="hidden" value="{{ products.id }}" name="id">
+                                <label class="small mb-1">Name :</label>
+                                <input class="form-control py-4" name="name" value="{{ products.name }}" type="text" placeholder="Enter name"/>
+                                <label class="small mb-1">Description :</label>
+                                <input class="form-control py-4" name="description" value="{{ products.description }}" type="text" placeholder="Enter description"/>
+                                <label class="small mb-1">Price :</label>
+                                <input class="form-control py-4" name="price" value="{{ products.price }}" type="currency" placeholder="Enter price"/>
+                                <label class="small mb-1">Image :</label>
+                                <select class="form-control" name="path" id="path">
+                                <option value="{{products.path}}">{{products.name}}</option>
+                                  <option value="assets/img/image/creatine.jpg">
+                                    Creatine
+                                  </option>
+                                  <option value="assets/img/image/wheyprotein.jpg">
+                                    Whey Protein
+                                  </option>
+                                  <option value="assets/img/image/weight.jpg">Weight</option>
+                
+                                  <option value="assets/img/image/massprotein.jpg">
+                                    Mass Protein
+                                  </option>
+                                  <!-- Add more options as needed -->
+                                </select>
+                              </div>
+                            </div>
+
+                            <input class="btn btn-primary" value="Edit Product" type="submit" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

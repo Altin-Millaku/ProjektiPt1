@@ -1,0 +1,55 @@
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <a class="nav-link mt-3" href="/admin">
+                        <div class="sb-nav-link-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        Dashboard
+                    </a>
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#productNav"
+                       aria-expanded="false" aria-controls="productNav">
+                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Products
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="productNav" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="admin-products-create">Add Product</a>
+                            <a class="nav-link" href="admin-products">View Products</a>
+                        </nav>
+                    </div>
+
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#userNav"
+                       aria-expanded="false" aria-controls="userNav">
+                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Users
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="userNav" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="admin-users-create">Add User</a>
+                            <a class="nav-link" href="admin-users">View Users</a>
+                        </nav>
+                    </div>
+
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#roleNav"
+                       aria-expanded="false" aria-controls="roleNav">
+                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Roles
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="roleNav" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="admin-roles">View Roles</a>
+                        </nav>
+                    </div>
+
+
+
+                </div>
+        </nav>
+    </div>
+    <div id="layoutSidenav_content">

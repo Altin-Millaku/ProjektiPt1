@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/abouts.css" />
+
+    <title>Olymbiada</title>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Olymbiada gym</h1>
+      <nav>
+        <ul>
+          <a href="/">Home</a>
+          <a href="/about">About us</a>
+          <a href="/location">Locaction</a>
+          <a href="/contact">Contact</a>
+          {% if isLoggdin == false %}
+          <a href="/login-form">Log in</a>
+          {% elseif isLoggdin == true %}
+          <a href="/logout">Log Out</a>
+          {% if role == "1" %}
+          <a href="/admin">Admin</a>
+          {% endif %} {% endif %}
+        </ul>
+      </nav>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>
+          Welcome to Our Gym, where fitness meets fun! We are dedicated to
+          helping you achieve your fitness goals and lead a healthy lifestyle.
+        </p>
+        <p>
+          Our state-of-the-art facilities, experienced trainers, and a variety
+          of fitness classes make us the perfect choice for your fitness
+          journey.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 Our Gym. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
