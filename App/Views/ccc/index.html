@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym Website</title>
+    <link rel="stylesheet" href="css/gym.css" />
+
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <h1>Olympiad Gym</h1>
+      <p>One Day or Day One. You Decide</p>
+    </header>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About us</a>
+      <a href="/location">Locaction</a>
+      <a href="/contact">Contact</a>
+      {% if isLoggdin == false %}
+      <a href="/login-form">Log in</a>
+      {% elseif isLoggdin == true %}
+      <a href="/logout">Log Out</a>
+      {% if role == "1" %}
+      <a href="/admin">Admin</a>
+      {% endif %} {% endif %}
+    </nav>
+    <div class="photos">
+      {{products.name}} {% for product in products %}
+
+      <div class="rubrika">
+        <img src="{{product.path}}" alt="" class="img" />
+        <div class="views_date">
+          <h2>{{product.name}}</h2>
+          <h3>{{product.price}}&#8364</h3>
+          <p>{{product.description}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <footer>
+      <p>&copy; 2023 Our Gym. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

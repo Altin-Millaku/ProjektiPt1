@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym Website</title>
+
+    <link rel="stylesheet" href="css/gym.css" />
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <h1>Olympiad Gym</h1>
+      <p>One Day or Day One. You Decide</p>
+    </header>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About us</a>
+      <a href="/location">Locaction</a>
+      <a href="/contact">Contact</a>
+      {% if isLoggdin == false %}
+      <a href="/login-form">Log in</a>
+      {% elseif isLoggdin == true %}
+      <a href="/logout">Log Out</a>
+      {% if role == "1" %}
+    
+      <a href="/admin">Admin</a>
+      {% endif %} {% endif %}
+    </nav>
+    <div class="photos">
+      <div>
+        <img
+          src="assets/img/image/Foto.jpg"
+          alt="small photo"
+          width="220"
+          height="250"
+        />
+        <h2><b>Ceo</b></h2>
+        <p><b>Emri:</b><em>Edrin</em></p>
+        <p><b>Mbiemri:</b><em>Krasniqi</em></p>
+        <p><b>Nr.tel:</b><em>045-867-111</em></p>
+        <p>
+          <b>Gmail:</b
+          ><a href="edrin.krasniqi@gmail.com"> edrin.krasniqi@gmail.com</a>
+        </p>
+        <p><b>Adresa:</b><em>Prishtine 10000</em></p>
+      </div>
+      <div>
+        <img
+          src="assets/img/image/Foto1.jpg"
+          alt="small photo"
+          width="220"
+          height="250"
+        />
+        <h2><b>Main Trainer</b></h2>
+        <p><b>Emri:</b><em>Altin</em></p>
+        <p><b>Mbiemri:</b><em>Millaku</em></p>
+        <p><b>Nr.tel:</b><em>045-912-057</em></p>
+        <p>
+          <b>Gmail:</b
+          ><a href="altinmilakuu@gmail.com"> altinmillakuu@gmail.com</a>
+        </p>
+        <p><b>Adresa:</b><em>Prishtine 10000</em></p>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 Our Gym. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

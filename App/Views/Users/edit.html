@@ -1,0 +1,51 @@
+{% extends "layout/appLayout.html" %}
+
+{% block title %}User edit{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Edit User</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header">
+                        <h3 class="text-center font-weight-light my-2">Edit User</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <form method="post" action="/admin-users-update">
+                            <div class="form-group">
+                                <input type="hidden" value="{{ user.id }}" name="id">
+                                <label class="small mb-1">Name :</label>
+                                <input class="form-control py-4" name="name" value="{{ user.name }}" type="text" placeholder="Enter name"/>
+                                <label class="small mb-1">Surname :</label>
+                                <input class="form-control py-4" name="surname" value="{{ user.surname }}" type="text" placeholder="Enter surname"/>
+                                <label class="small mb-1">Email :</label>
+                                <input class="form-control py-4" name="email" value="{{ user.email }}" type="text" placeholder="Enter email"/>
+                                <label class="small mb-1">Password :</label>
+                                <input class="form-control py-4" name="password" value="{{ user.password }}" type="text" placeholder="Enter password"/>
+                                <label class="small mb-1">Role :</label>
+                                <select name="role_id" class="custom-select custom-select-lg ">
+
+
+                                    <option value="">choice a role</option>
+                                    {% for role in roles %}
+                                    {% if role.id == user.role_id %}
+                                    <option selected value="{{ role.id }}">{{ role.name }}</option>
+                                    {% else %}
+                                    <option value="{{ role.id }}">{{ role.name }}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <input class="btn btn-primary" value="Edit User" type="submit" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

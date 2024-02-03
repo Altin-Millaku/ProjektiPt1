@@ -1,0 +1,89 @@
+{% extends "layout/appLayout.html" %} {% block title %}Language Create{%
+endblock %} {% block content %}
+<main>
+  <div class="container-fluid">
+    <h1 class="mt-4">Add Product</h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="card shadow-lg border-0 rounded-lg mt-5">
+          <div class="card-header">
+            <h3 class="text-center font-weight-light my-2">Add Product</h3>
+          </div>
+
+          <div class="card-body">
+            <form method="post" action="/admin-products-store">
+              <div class="form-group">
+                <label class="small mb-1">Name :</label>
+                <input
+                  class="form-control py-4"
+                  name="name"
+                  type="text"
+                  placeholder="Enter name"
+                />
+                <label class="small mb-1"> Description :</label>
+                <input
+                  class="form-control py-4"
+                  name="description"
+                  type="text"
+                  placeholder="Enter description"
+                />
+                <label class="small mb-1">Price :</label>
+                <input
+                  class="form-control py-4"
+                  name="price"
+                  type="currency"
+                  placeholder="Enter price"
+                />
+                <label class="small mb-1">Image :</label>
+                <select class="form-control" name="path">
+                  <option value="assets/img/image/creatine.jpg">
+                    Creatine
+                  </option>
+                  <option value="assets/img/image/wheyprotein.jpg">
+                    Whey Protein
+                  </option>
+                  <option value="assets/img/image/wheights.jpg">
+                    Weight
+                  </option>
+                  <option value="assets/img/image/massprotein.jpg">
+                    Mass Protein
+                  </option>
+                  <option value="assets/img/image/aerobic1.jpg">
+                    Aerobic Lessons
+                  </option>
+                  <option value="assets/img/image/cross.jpeg">
+                   Cross Fit Lessons
+                  </option>
+                  <option value="assets/img/image/gym.jpg">
+                    Gym Membership
+                  </option>
+                  <option value="assets/img/image/homeworkout.jpg">
+                    Workout Programs
+                  </option>
+                  <option value="assets/img/image/kangoo.jpg">
+                    Kagoro Lessons
+                  </option>
+                  <option value="assets/img/image/cbum.jpg">
+                    Personal Trainers
+                  </option>
+                  <option value="assets/img/image/wear.jpg">
+                    Gym Wear
+                  </option>
+                
+                </select>
+              </div>
+
+              <input
+                class="btn btn-primary"
+                value="Create Product"
+                type="submit"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>User Registration and Login</title>
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+
+  <body>
+    <div id="loginForm" style="display: none">
+      {{message}}
+      <form action="/login" method="post">
+        <h2>Login</h2>
+        <label for="password">Email:</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          required
+          title="Email should have @ and ."
+        />
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          title="Password should start with a capital letter and end with 3 numbers"
+        />
+
+        <button type="submit">Login</button>
+        <p class="switch-form">
+          Don't have an account?
+          <a href="#" onclick="toggleForm()">Register here</a>.
+        </p>
+        <input type="button" value="Go Back" onclick="window.location='/'" />
+      </form>
+    </div>
+
+    <div id="registrationForm">
+      {{message}}
+      <form action="/signup" method="post">
+        <h2>Register</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required />
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        
+
+
+
+        <label for="confirm_password">Confirm Password</label>
+        <input
+          type="password"
+          id="confirm_password"
+          name="confirm_password"
+          required
+        />
+
+        <button type="submit">Register</button>
+        <p class="switch-form">
+          Already have an account?
+          <a href="#" onclick="toggleForm()">Login here</a>.
+        </p>
+        <input type="button" value="Go Back" onclick="window.location='/'" />
+      </form>
+    </div>
+
+    <script>
+      function toggleForm() {
+        if (registrationForm.style.display === "none") {
+          registrationForm.style.display = "block";
+          loginForm.style.display = "none";
+        } else {
+          registrationForm.style.display = "none";
+          loginForm.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+  <footer>
+    <p>&copy; 2023 Our Gym. All rights reserved.</p>
+  </footer>
+</html>
